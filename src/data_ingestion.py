@@ -34,7 +34,8 @@ data_directory = "data/"
 if not os.path.exists(data_directory):
     os.makedirs(data_directory)
 
-# Descargar los archivos si no están presentes
+# Descargar los archivos si no están presentes 
+# Actualizar para tener un nombre más dijerible 
 for url in urls:
     filename = os.path.join(data_directory, os.path.basename(url))
     if not os.path.exists(filename):
