@@ -45,6 +45,9 @@ df['Precio_Promedio'] = df['Precio_Promedio'].combine_first(df['Precio_Rural_Ext
 # Eliminar columnas redundantes después de la concatenación
 df.drop(columns=["Cultivo_Extra", "Precio_Rural_Extra"], inplace=True)
 
+# Filtrar el DataFrame para incluir solo registros donde el año sea >= 2006
+df_filtered = df[df['Ano'] >= 2006]
+
 # Guardar el DataFrame transformado
 output_path = "data/transformed_combined_data.csv"
 df.to_csv(output_path, index=False, encoding="latin1")
