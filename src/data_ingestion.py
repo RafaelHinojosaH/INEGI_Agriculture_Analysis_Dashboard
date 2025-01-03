@@ -57,7 +57,7 @@ csv_files = [os.path.join(data_directory, f) for f in os.listdir(data_directory)
 dataframes = []
 for file in csv_files:
     try:
-        df = pd.read_csv(file, encoding='latin1')
+        df = pd.read_csv(file, encoding='utf-8')
         dataframes.append(df)
     except Exception as e:
         print(f"Error al leer {file}: {e}")
