@@ -1,3 +1,5 @@
 __pycache__
 .DS_Store
 data/
+src/data_to_postgress.py
+src/files.txt
