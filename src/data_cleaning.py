@@ -1,10 +1,11 @@
 import pandas as pd
+import re
 
 # Ruta al archivo combinado
 file_path = "data/combined_data.csv"
 
 # Leer el archivo combinado
-df = pd.read_csv(file_path, encoding="latin1")
+df = pd.read_csv(file_path, encoding="utf-8")
 
 # Renombrar columnas a nombres más legibles
 df.rename(columns={
@@ -50,6 +51,14 @@ df_filtered = df[df['Ano'] >= 2006]
 
 # Guardar el DataFrame transformado
 output_path = "data/transformed_combined_data.csv"
-df.to_csv(output_path, index=False, encoding="latin1")
+           
+df.to_csv(output_path, index=False, encoding="utf-8")
 
 print(f"Datos transformados guardados en: {output_path}")
+
+special_characters_pattern = re.compile(r"[^\w\s]", re.UNICODE)
+for column in df.columns:
+    if df[column].dtype == 'object':
+        has_special = df[column].apply(lambda x: bool(special_characters_pattern.search(str(x))) if pd.notnull(x) else False)
+        if has_special.any():
+                print(f"La columna '{column}' contiene caracteres especiales.")
