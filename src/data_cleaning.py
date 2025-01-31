@@ -9,7 +9,7 @@ df = pd.read_csv(file_path, encoding="utf-8")
 
 # Renombrar columnas a nombres más legibles para facilitar el análisis y la interpretación
 df.rename(columns={
-    "Anio": "Anio",  # Año de la información, formato numérico de 4 dígitos (e.g., 2023)
+    "Anio": "Año",  # Año de la información, formato numérico de 4 dígitos (e.g., 2023)
     "Idestado": "ID_Estado",  # Código numérico que identifica al estado de producción (1-32)
     "Nomestado": "Estado",  # Nombre oficial de la entidad federativa o estado
     "Idddr": "ID_DDR",  # Código numérico del Distrito de Desarrollo Rural (1-193)
@@ -48,7 +48,7 @@ df['Precio_Promedio'] = df['Precio_Promedio'].combine_first(df['Precio_Rural_Ext
 df.drop(columns=["Cultivo_Extra", "Precio_Rural_Extra"], inplace=True)
 
 # Filtrar el DataFrame para incluir solo registros donde el año sea >= 2006
-df_filtered = df[df['Ano'] >= 2006]
+df_filtered = df[df['Año'] >= 2006]
 
 # Guardar el DataFrame transformado
 output_path = "data/transformed_combined_data.csv"
