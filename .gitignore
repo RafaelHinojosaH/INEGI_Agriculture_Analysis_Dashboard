@@ -4,3 +4,5 @@ data/
 src/data_to_postgress.py
 src/files.txt
 *.ipynb
+src/*.ipynb
+
