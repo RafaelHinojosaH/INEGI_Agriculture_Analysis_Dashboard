@@ -20,7 +20,7 @@ A dashboard project focusing on avocado production analysis using data from **IN
 ## About the Project
 
 Mexico is one of the largest producers of avocados worldwide, and the **INEGI** database provides extensive data on agriculture-related metrics. This dashboard leverages **INEGI** data to analyze:
-- Avocado production
+
 - Regional yield variations
 - Historical trends
 - Export data and economic impact
@@ -49,9 +49,10 @@ The goal is to help producers, exporters, and researchers gain deeper insights a
 ## Installation
 
 1. **Clone the Repository**:
-   ```bash
+```bash
    git clone https://github.com/your-username/inegi-avocado-dashboard.git
-    ´´´
+```
+
 2. **Navigate to the Project Directory**
 
 ```bash
